@@ -1,19 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <stdio.h>
 
-int main(void) {
-    
-    printf("Forking process\n");
+int main(){
 
-    pid_t forked = fork();
+    pid_t pid;
+    pid=fork();
 
-    printf("PID: %d\n", getpid());
+    if(pid>0){
+        //CODICE PADRE
+        printf("sono il processo padre(%d)\n",getpid());
+        printf("(padre) La varibile PID è %d\n", pid);
+    }
+    else {
+        //CODICE FIGLIO
+        printf("sono il processo figlio(%d)\n",getpid());
+        printf("(figlio) La varibile PID è %d\n", pid);
 
-    if ( forked == 0 )
-        printf("This is child process bufbau\n");
-    else
-        printf("FORKED PID: %d\n", forked);
+    }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
