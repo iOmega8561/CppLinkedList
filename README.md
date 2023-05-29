@@ -1,4 +1,5 @@
 # C++ Linked List
+This project is unmaintained and has been archived.
 ## Disclaimer
 This is an implementation of the common linked list class in C++. This project was originally created as an exercise for an university exam. The implementation works but is not proven to be safe and therefore should not be used in any project.
 ## How to use
